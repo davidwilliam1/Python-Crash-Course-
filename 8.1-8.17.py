@@ -1,7 +1,9 @@
+import modules 
+
 #try it yourself 8.1
 def display_message():
 	"""what i learned in chap#8"""
-	print ("Functon are good for wraping a block of code!")
+	print ("Function are good for warping a block of code!")
 
 display_message()
 
@@ -9,19 +11,22 @@ display_message()
 
 def fav_book(favbook):
 	"""prints the favorite book"""
-	print (f"So your favorite book is {favbook}")
+	print (f"So your favorite book is {favbook.title()}")
 
-fav_book("ilovekittens")
+fav_book("Lice in wonderland")
 
 #try it yourself 8.3
 
-def make_shirt(size, text): print (f"\nThe size of your t-shirt is {size}\nThe text on the t-shirt will be '{text}'")
+def make_shirt(size, text): 
+	"""prints the size and the text on a customizable t-shirt """
+	print (f"\nThe size of your t-shirt is {size}\nThe text on the t-shirt will be '{text}'")
 
 make_shirt(43, "i love dogs")
 
 #try it yourself 8.4
 
-def make_shirt(size=50, text='i love python'): print (f"\nThe size of your t-shirt is {size}\nThe text on the t-shirt will be '{text}'")
+def make_shirt(size=50, text='i love python'): 
+	print (f"\nThe size of your t-shirt is {size}\nThe text on the t-shirt will be '{text}'")
 
 
 make_shirt()
@@ -31,17 +36,15 @@ make_shirt(size=30, text="i love you")
 
 def describe_city(city, country="finland"):
 	print (f"{city.title()} is in {country.title()}")
-print()
-describe_city("bangkok",)
-describe_city("helsinki")
+
+describe_city("Helsinki")
 describe_city("espoo")
 
 #try it yourself 8.6
-print()
 
-def city_country(city, country):
-	city_1country = (f'"{city}, {country}"')
-	return city_1country.title()
+def city_country(city, country):   
+	city_country = (f'"{city}, {country}"')
+	return city_country.title()
 
 city = city_country("espoo", "finland")
 print (city)
@@ -119,7 +122,7 @@ print (message)
 print (sent)
 
 
-#try it youeself 8.11
+#try it yourself 8.11
 
 def sent_mess(messages, sents):
 	while message:
@@ -129,12 +132,12 @@ def sent_mess(messages, sents):
 message = ["hello there", "hi there", "good morning, there", "i love you there"]
 sent = []
 messages0 = message[:]
-sent_mess(message, sent)
+sent_mess(messages0, sent)
 
-print (message)
-print (sent)
 print (messages0)
-
+print (sent)
+print (message)
+ 
 #try it yourself 8.12 
 def sandwiches(*toppings):
 	print (toppings)
@@ -147,17 +150,18 @@ sandwiches("egg", "tomato","leaves")
 def build_profile(first, last, **user_info):
     """Build a dictionary containing everything we know about a user."""
     profile = {}
-    profile['first_name'] = first
-    profile['last_name'] = last
+    profile['first_name'] = first.title()
+    profile['last_name'] = last.title()
     for key, value in user_info.items():
         profile[key] = value
     return profile
 
-my_profile = build_profile("dav", ".W", location="thailand")
+my_profile = build_profile("joe", "amam", location="nutland ")
 print(my_profile)
 
 #try it yourself 8.14
-
+""" 
+cars function is used fo 8.15 
 def cars(manufacture, model,**features):
 	car_info={}
 	car_info["manufacture"]=manufacture
@@ -168,7 +172,22 @@ def cars(manufacture, model,**features):
 
 Ford = cars("Ford","focus",tiremodel="A78")
 print (Ford) 
+"""
+# 8.15 
 
+instence = modules.cars("audi","a4")
+print (v)
+
+# 8.16 
+""" All importing methods have been tested thoroughly
+
+import modules
+from modules import cars 
+from modules import cars as c
+import modules as m
+from modules import *
+
+"""
 
 
 
